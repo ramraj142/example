@@ -1,0 +1,53 @@
+/* Styles for form container */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  /* Styles for form fields */
+  label {
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* Error message styling */
+  .small-error {
+    color: red;
+    font-size: 12px;
+  }
+  
+  /* Additional styling if needed */
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  .mobile-number-prefix {
+    display: flex;
+    align-items: center;
+  }
+  
+  .mobile-number-prefix input[type="number"] {
+    flex: 1;
+    margin-left: 5px; /* Adjust as needed */
+  }
+  

@@ -1,0 +1,50 @@
+
+ <h1 style="text-align: center;"   >Company Tasks</h1>
+
+<form [formGroup]="objForm" (ngSubmit)="submit()">
+
+  <label for="panCard">PAN Card:-</label><br>
+<input type="text" formControlName="panCard">
+<div *ngIf="objForm.get('panCard').invalid && objForm.get('panCard').touched">
+  <div *ngIf="objForm.get('panCard').errors['required']" style="color: red;">PAN Card number is required.</div>
+  <div *ngIf="objForm.get('panCard').errors && objForm.get('panCard').errors['pattern']" style="color: red;">Please enter a valid PAN Card number.</div>
+</div><br><br>
+
+
+  <label for="fullName">Full Name:-</label><br>
+<input type="text" formControlName="fullName">
+<div *ngIf="objForm.get('fullName').invalid && objForm.get('fullName').touched">
+  <div *ngIf="objForm.get('fullName').errors['required']" style="color: red;">Full Name is required.</div>
+  <div *ngIf="objForm.get('fullName').errors && objForm.get('fullName').errors['pattern']" style="color: red;">Full Name should only contain alphabetic characters.</div>
+</div><br><br>
+
+  <label for="email">Email:-</label><br>
+  <input type="email" formControlName="email">
+  <div *ngIf="objForm.get('email').invalid && objForm.get('email').touched">
+    <small *ngIf="objForm.get('email').errors['required']" style="color: red;">Email is required.</small>
+    <div *ngIf="objForm.get('email').errors['pattern']" style="color: red;">Please enter a valid Gmail address.</div>
+
+  </div><br><br>
+
+  <label for="mobileNumber">Mobile Number:-</label><br>
+  <div class="mobile-number-prefix">+91 <input type="number" formControlName="mobileNumber"></div>
+  <div *ngIf="objForm.get('mobileNumber').invalid && objForm.get('mobileNumber').touched">
+    <small *ngIf="objForm.get('mobileNumber').errors['required']" style="color: red;">Mobile Number is required.</small>
+    <div *ngIf="objForm.get('mobileNumber').errors && objForm.get('mobileNumber').errors['pattern']" style="color: red;">Mobile Number must be exactly 10 digits.</div>
+  </div><br><br>
+  
+
+  <label for="address">Address:-</label><br>
+  <textarea formControlName="address"></textarea>
+  <div *ngIf="objForm.get('address').invalid && objForm.get('address').touched">
+    <small *ngIf="objForm.get('address').errors['required']" style="color: red;">Address is required.</small>
+  </div><br><br>
+
+
+  <button type="submit" [disabled]="!objForm.valid"> Submit </button>
+</form>  
+
+
+
+
+
